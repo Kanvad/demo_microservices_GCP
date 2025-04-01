@@ -15,13 +15,13 @@ mongoose
     .then(() => console.log('🔗 Kết nối MongoDB thành công!'))
     .catch((err) => console.error('❌ Lỗi kết nối MongoDB:', err));
 
-// Định nghĩa schema & model (Sửa lỗi khoảng trắng)
+// Định nghĩa schema & model
 const userSchema = new mongoose.Schema({
     name: String,
     email: String
 });
 
-const User = mongoose.model('User', userSchema); // Không có dấu cách thừa
+const User = mongoose.model('User', userSchema);
 
 // API lấy danh sách người dùng
 app.get('/users', async (req, res) => {
