@@ -8,7 +8,7 @@ const ProductList = () => {
         const fetchProducts = async () => {
             try {
                 // Gọi API bằng tên service trong Docker Compose
-                const response = await axios.get('http://product-service:3002/products');
+                const response = await axios.get('http://34.134.247.76:3002/products');
                 setProducts(response.data);
             } catch (error) {
                 console.error('Lỗi khi tải dữ liệu sản phẩm:', error);

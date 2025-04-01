@@ -8,7 +8,7 @@ const UserList = () => {
         const fetchUsers = async () => {
             try {
                 // Gọi API bằng tên service trong Docker Compose
-                const response = await axios.get('http://user-service:3001/users');
+                const response = await axios.get('http://34.134.247.76:3001/users');
                 setUsers(response.data);
             } catch (error) {
                 console.error('Lỗi khi tải dữ liệu người dùng:', error);
