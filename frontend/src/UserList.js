@@ -7,13 +7,11 @@ const UserList = () => {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                // Lấy IP từ biến môi trường, nếu không có thì fallback về localhost (cho dev)
-                const vmIp = process.env.REACT_APP_VM_IP || 'localhost';
-                const response = await axios.get(`http://${vmIp}:3001/users`);
+                // Gọi API bằng tên service trong Docker Compose
+                const response = await axios.get('http://user-service:3001/users');
                 setUsers(response.data);
             } catch (error) {
                 console.error('Lỗi khi tải dữ liệu người dùng:', error);
-                // Xử lý lỗi, ví dụ hiển thị thông báo cho người dùng
             }
         };
         fetchUsers();
